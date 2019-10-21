@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Test</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="number">
+          25
+        </div>
+        <div class="block">
+          <div class="card-block">
+            <div class="card-block-text">
+              <h3>
+                Обучение по продажам
+              </h3>
+              <h4>
+                Вы сделали 13 продаж и заработали:
+              </h4>
+              <p>
+                &#36;2000
+              </p>
+            </div>
+
+            <div class="card-block-progress">
+              <p>
+                Месячный план выполнен на
+              </p>
+              <div id="myProgress">
+                <div id="myBar">10%</div>
+              </div>
+              <div class="next">
+                <button onclick="move()">Продолжить</button>
+                <span> Осталось 8 дней </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let i = 0;
+      function move() {
+        if (i == 0) {
+          i = 1;
+          function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+          }
+          let elem = document.getElementById("myBar");
+          let width = 10;
+          let id = setInterval(frame, 25);
+          function frame() {
+            if (width >= getRandomInt(10, 100)) {
+              clearInterval(id);
+              i = 0;
+            } else {
+              width++;
+              elem.style.width = width + "%";
+              elem.innerHTML = width + "%";
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
