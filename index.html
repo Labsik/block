@@ -32,7 +32,7 @@
                 Месячный план выполнен на
               </p>
               <div id="myProgress">
-                <div id="myBar">10%</div>
+                <div id="myBar">0%</div>
               </div>
               <div class="next">
                 <button onclick="move()">Продолжить</button>
@@ -53,7 +53,7 @@
             return Math.floor(Math.random() * (max - min + 1)) + min;
           }
           let elem = document.getElementById("myBar");
-          let width = 10;
+          let width = 0;
           let id = setInterval(frame, 25);
           function frame() {
             if (width >= getRandomInt(10, 100)) {
